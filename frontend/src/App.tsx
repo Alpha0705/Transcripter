@@ -3,7 +3,7 @@ import axios from "axios";
 import { Upload, File, Download, Loader2 } from "lucide-react";
 import styles from "./App.module.css";
 
-const API_BASE_URL = "http://localhost:5000";
+const API_BASE_URL = "https://transcripter-fyod.onrender.com";
 
 function App() {
   const [file, setFile] = useState<File | null>(null);
