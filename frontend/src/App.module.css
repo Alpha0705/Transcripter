@@ -1,0 +1,160 @@
+:root {
+  --bg: #f4f4f4;
+  --text: #000;
+  --button-bg: #007bff;
+  --button-text: #fff;
+  --border: #ccc;
+  --input-bg: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+  text-align: center;
+}
+
+.uploadSection {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.fileInputLabel,
+.uploadButton {
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.uploadButton:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+.contentContainer {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+}
+
+.videoContainer {
+  flex: 1;
+  max-width: 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.videoPlayer {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.transcriptContainer {
+  flex: 1;
+  max-width: 50%;
+  background: var(--input-bg);
+  padding: 15px;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.transcriptText {
+  text-align: left;
+  white-space: pre-wrap;
+  background: var(--input-bg);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  overflow-y: auto;
+  max-height: 200px;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.downloadButton:hover,
+.uploadButton:hover,
+.fileInputLabel:hover {
+  opacity: 0.9;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.loadingContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--button-bg);
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Spinner Animation */
+.spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
